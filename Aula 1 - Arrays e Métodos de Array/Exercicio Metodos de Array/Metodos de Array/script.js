@@ -1,30 +1,34 @@
 function executarPush() {
-  const array = ['🍎', '🍌'];
-  const resultado = array;
+  const frutas = ['🍎', '🍌'];
+  frutas.push("🍇"); //Adiciona um elemento no final
+  const resultado = frutas;
   document.getElementById('resultado-push').textContent = resultado;
 }
 
 function executarPop() {
   const array = ['🍎', '🍌', '🍇'];
+  array.pop(); //Remove o último elemento
   const resultado = array;
   document.getElementById('resultado-pop').textContent = resultado;
 }
 
 function executarShift() {
   const array = ['🍎', '🍌', '🍇'];
+  array.shift(); //Remove o primeiro elemento
   const resultado = array;
   document.getElementById('resultado-shift').textContent = resultado;
 }
 
 function executarUnshift() {
   const array = ['🍌', '🍇'];
-  const resultado = 'Resultado da operação unshift';
+  array.unshift("🍓"); //Adiciona um novo elemento no começo 
+  const resultado = array;
   document.getElementById('resultado-unshift').textContent = resultado;
 }
 
 function executarIncludes() {
   const array =  ['🍎', '🍌', '🍇'];
-  const resultado = array;
+  const resultado = array.includes("🥝");
   document.getElementById('resultado-includes').textContent = resultado;
 }
 
