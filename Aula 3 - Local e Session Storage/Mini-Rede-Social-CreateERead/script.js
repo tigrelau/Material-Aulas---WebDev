@@ -22,10 +22,16 @@ let posts = [
 
 // Inicialização
 window.onload = function() {
+    carregarPosts();
     displayPosts();
 
     document.getElementById('postForm').addEventListener('submit', addPost); 
     document.querySelector('#postList').addEventListener('click', handleClick); 
+
+    //localStorage.setItem("nome", "Fulano");
+    //console.log(localStorage.getItem("nome"));
+    //localStorage.removeItem("nome");
+    //localStorage.clear();
 };
 
 function handleClick(infosDoEvento){
@@ -81,6 +87,8 @@ function addPost(event) {
     };
     
     posts.unshift(post);
+
+    salvarPosts();
     
     document.getElementById('postForm').reset();
     
@@ -103,4 +111,15 @@ function apagarPost(index){
     }
     displayPosts()
 
+}
+
+function salvarPosts(){
+    localStorage.setItem("posts", JSON.stringify(posts));
+}
+
+function carregarPosts(){
+    const postsGuardados = localStorage.getItem("posts");
+    if(postsGuardados){
+        posts = JSON.parse(postsGuardados)
+    }
 }
