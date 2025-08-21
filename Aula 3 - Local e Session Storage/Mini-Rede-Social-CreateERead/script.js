@@ -25,7 +25,12 @@ window.onload = function() {
     displayPosts();
 
     document.getElementById('postForm').addEventListener('submit', addPost); 
+    document.querySelector('#postList').addEventListener('click', handleClick); 
 };
+
+function handleClick(infosDoEvento){
+    console.log(infosDoEvento.target)
+}
 
 // Função para exibir os posts
 function displayPosts() {
@@ -42,6 +47,7 @@ function displayPosts() {
                 <p><em>Categoria: ${pegaPost.category}</em></p>
                 <p><em>Data e Hora: ${pegaPost.date}</em></p>
                 <button><i class="fa-solid fa-pen-to-square"></i> Editar</button>
+                <br>
                 <button><i class="fa-solid fa-eraser"></i> Apagar</button>
                 <hr style="margin:30px;">`;
                
