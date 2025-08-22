@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f8fa;
+    background-color:rgb(66, 66, 66);
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,8 +14,8 @@ body {
 }
 
 header {
-    background-color: #1da1f2;
-    color: #fff;
+    background-color: #a3356c;
+    color: #ffffff;
     padding: 10px 0;
     text-align: center;
     margin-bottom: 20px;
@@ -37,14 +37,15 @@ label {
 input[type="text"],
 textarea,
 select {
+    background-color:rgb(160, 158, 158);
     width: 100%;
     padding: 10px;
     margin: 5px 0 15px 0;
-    border: 1px solid #ccd6dd;
+    border: 1px solidrgb(185, 185, 185);
     border-radius: 10px;
     box-sizing: border-box;
     font-size: 16px;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 5px rgba(129, 129, 129, 0.1);
 }
 
 textarea {
@@ -52,7 +53,7 @@ textarea {
   }
 
 button {
-    background-color: #1da1f2;
+    background-color: #a3356c;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -62,7 +63,7 @@ button {
 }
 
 button:hover {
-    background-color: #0c7bcb;
+    background-color:#6b093a;
 }
 
 ul {
@@ -71,8 +72,8 @@ ul {
 }
 
 li {
-    background-color: #fff;
-    border: 1px solid #ccd6dd;
+    background-color:rgb(119, 119, 119);
+    border: 1px solidrgb(136, 136, 136);
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 15px;
