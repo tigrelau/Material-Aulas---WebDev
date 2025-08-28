@@ -8,9 +8,15 @@ function App() {
 
   return (
     <>
-     <Header/>
-     <Header/>
-     <Header/>
+     <Header titulo="Henrique Castro"
+     texto="ta duro, dorme fi"
+     cor="green"/>
+     <Header titulo="Aurea diva"
+     texto="mano"
+     cor="pink"/>
+     <Header titulo="Aurea gato"
+     texto="avm"
+     cor="purple"/>
     </>
   )
 }
