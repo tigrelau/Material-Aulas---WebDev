@@ -1,6 +1,6 @@
 import Sidebar from "../components/Sidebar";
 import Dashboard from "./Dashboard";
-import logo from "../assets/logo.png";
+// import logo from "../assets/logo.png";
 import { Outlet } from "react-router-dom";
 
 export default function AdminLayout() {
