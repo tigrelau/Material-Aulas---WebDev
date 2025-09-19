@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AdminLayout from "../pages/AdminLayout";
 import Dashboard from "../pages/Dashboard";
 import Usuarios from "../pages/Usuarios";
+import Times from "../pages/Times";
 import Relatorios from "../pages/Relatorios";
 import Configuracoes from "../pages/Configuracoes";
 import PageNotFound from "../pages/PageNotFound";
@@ -10,7 +11,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <AdminLayout />,
-    errorElement: <PageNotFound />, 
+    errorElement: <PageNotFound />,
     children: [
       {
         index: true,
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "usuarios",
         element: <Usuarios />,
+      },
+      {
+        path: "times",
+        element: <Times />,
       },
       {
         path: "relatorios",
