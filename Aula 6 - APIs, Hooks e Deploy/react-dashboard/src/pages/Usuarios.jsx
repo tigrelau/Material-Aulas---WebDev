@@ -1,28 +1,55 @@
 import { useEffect, useState } from "react";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 
 export default function Usuarios() {
-  const [usuarios, setUsuarios] = useState([]);
+  const [users, setUsers] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(`${API_URL}`)
       .then((response) => response.json())
-      .then((data) => setUsuarios(data))
-      .catch((erro) => console.log(erro))
-      .finally(console.log("Carregamento Finalizado!"));
-  });
+      .then((data) => setUsers(data));
+  }, []);
+
+  function handleClick() {
+    alert("Clicou!");
+  }
 
   return (
-    <div className="p-6 flex-1 bg-gray-100">
-      <h1 className="text-2xl font-bold">Usuários</h1>
-      <p className="mt-2 text-gray-600">Página de usuários.</p>
-
-      {usuarios.map((pegaItem) => (
-        <div key={pegaItem.id}>
-          <p>{pegaItem.name}</p>
-          <p>{pegaItem.email}</p>
-          <p>{pegaItem.address.city}</p>
-        </div>
-      ))}
-    </div>
+    <Table>
+      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">ID</TableHead>
+          <TableHead>Nome</TableHead>
+          <TableHead>E-mail</TableHead>
+          <TableHead className="text-right">Ações</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {users.map((pegaItem) => (
+          <TableRow key={pegaItem.id}>
+            <TableCell className="font-medium">{pegaItem.id}</TableCell>
+            <TableCell>{pegaItem.name}</TableCell>
+            <TableCell>{pegaItem.email}</TableCell>
+            <TableCell className="text-right">
+              <Button className="m-4 bg-cyan-600" onClick={handleClick}>
+                Editar
+              </Button>
+              <Button className="m-4  bg-cyan-600">Deletar</Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 }
