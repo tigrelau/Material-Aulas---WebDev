@@ -8,7 +8,7 @@ export default function ProductCard({ id, title, price, image, rating}) {
       <h3 className="font-bold text-lg">{title}</h3>
 
       {rating && (
-        <p className="flex items-center text-yellow-400 mt-1">
+        <p className="flex items-center text-yellow-500 mt-1">
           <FaStar className="mr-1" />
           {rating.rate} ({rating.count})
         </p>
@@ -18,7 +18,7 @@ export default function ProductCard({ id, title, price, image, rating}) {
 
       <Link
         to={`/product/${id}`}
-        className="mt-3 inline-block bg-yellow-400 font-bold text-black px-3 py-1 rounded hover:bg-yellow-500"
+        className="mt-3 inline-block bg-orange-300 font-bold text-black px-3 py-1 rounded hover:bg-orange-500"
       >
         Ver detalhes
       </Link>
