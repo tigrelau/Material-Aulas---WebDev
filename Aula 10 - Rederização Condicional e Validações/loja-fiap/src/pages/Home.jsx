@@ -7,10 +7,13 @@ export default function Home() {
   const [jewelery, setJewelery] = useState([]);
   const [mensClothing, setMensClothing] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState([]);
 
   const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
+    setIsLoading(true)
+
     fetch(`${API_URL}/category/electronics`)
       .then((res) => res.json())
       .then((data) => setElectronics(data));
@@ -25,10 +28,18 @@ export default function Home() {
 
     fetch(`${API_URL}`)
       .then((res) => res.json())
-      .then((data) => setAllProducts(data));
+      .then((data) => setAllProducts(data))
+      .finally(()=> setIsLoading(false))
   }, []);
     
   const filtradosMaquiagens = allProducts.filter(pegaItem => pegaItem.title.includes('blush') || pegaItem.title.includes('lipstick') || pegaItem.description.includes('lipstick') || pegaItem.description.includes('blush'))
+
+  if(isLoading){
+    return <p>Carregando...</p>
+
+
+  }
+
 
   return (
     <div>
