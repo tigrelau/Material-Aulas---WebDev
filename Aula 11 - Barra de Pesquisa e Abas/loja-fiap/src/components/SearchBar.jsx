@@ -1,4 +1,17 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const SearchBar = () => {
+
+    const [search, setSearch] = useState("")
+    const navigate = useNavigate()
+
+    function handleSearch(e){
+        let value = e.target.value
+        setSearch(e.target.value)
+        navigate(`searchWelcome/${value}`)
+
+    }
 
     return (
          <div className="w-64">
@@ -6,6 +19,10 @@ const SearchBar = () => {
             type="text"
             id="search"
             placeholder="Pesquisar produtos..."
+            onChange={handleSearch}
+            onFocus={()=> navigate("searchWelcome")}
+            onBlur={()=> navigate("/")}
+            value={search}
             className="pl-10 pr-3 py-1 w-64 bg-transparent border-b-2 border-orange-200 focus:border-orange-200 outline-none transition-colors duration-300"
           />
 
